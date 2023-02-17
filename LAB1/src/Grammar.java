@@ -17,24 +17,26 @@ public class Grammar {
         this.S = S;
     }
 
-    public String generateString() {
+    public String generateString(int maxLength) {
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
 
         // Start with the start symbol
         String symbol = S;
 
-        while (true) {
+        int length = 0;
+        while (length < maxLength) {
             List<String> productions = P.get(symbol);
             if (productions == null) {
                 break;  // Symbol is a terminal symbol
             }
 
             String production = productions.get(random.nextInt(productions.size()));
-            for (int i = 0; i < production.length(); i++) {
+            for (int i = 0; i < production.length() && length < maxLength; i++) {
                 char c = production.charAt(i);
                 if (VT.contains(Character.toString(c))) {
                     sb.append(c);
+                    length++;
                 } else {
                     symbol = Character.toString(c);
                 }

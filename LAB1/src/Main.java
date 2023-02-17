@@ -15,7 +15,7 @@ public class Main {
         Grammar grammar = new Grammar(VN, VT, P, S);
 
         for (int i = 0; i < 5; i++) {
-            String str = grammar.generateString();
+            String str = grammar.generateString(100);
             System.out.println(str);
         }
     }
