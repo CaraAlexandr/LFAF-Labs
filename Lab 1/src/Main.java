@@ -25,7 +25,7 @@ public class Main {
         }
 
         FiniteAutomaton automaton = grammar.toFiniteAutomaton();
-        testString1 = "adcb";
+        testString1 = "bda";
         String testString2 = "acccb";
         boolean result1 = automaton.stringBelongToLanguage(testString1);
         boolean result2 = automaton.stringBelongToLanguage(testString2);
