@@ -102,5 +102,19 @@ List<Token> tokens = lexer.tokenize(input);
     }
 }
 ```
+## Results
+NUMBER('5') <br/>
+PLUS('+') <br/>
+LPAREN('(') <br/>
+NUMBER('3') <br/>
+MINUS('-') <br/>
+NUMBER('2') <br/>
+RPAREN(')') <br/>
+MULTIPLY('*') <br/>
+NUMBER('7') <br/>
+DIVIDE('/') <br/>
+NUMBER('2') <br/>
+EOF('') <br/>
+
 # Conclusions 
 The implemented lexer and scanner can successfully tokenize arithmetic expressions. The output shows a list of tokens with their types and values. This implementation serves as a basis for further development, such as parsing the tokens and performing arithmetic operations based on the parsed abstract syntax tree.
