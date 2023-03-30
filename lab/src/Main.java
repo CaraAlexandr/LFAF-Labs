@@ -60,6 +60,8 @@ public class Main {
         System.out.println(newAutomaton.automatonType());
         System.out.println("---------------------");
 
+        newAutomaton.display();
+
 
 
 

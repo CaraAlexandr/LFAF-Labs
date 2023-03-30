@@ -141,7 +141,7 @@ public class FiniteAutomaton {
                 g.setColor(Color.BLACK);
                 for (List<String> transition : delta) {
                     int fromIndex = Q.indexOf(transition.get(0));
-                    int toIndex = Q.indexOf(transition.get(2));
+                    int toIndex = Q.indexOf(transition.get(3));
 
                     double angleFrom = 2 * Math.PI * fromIndex / automatonSize;
                     double angleTo = 2 * Math.PI * toIndex / automatonSize;
