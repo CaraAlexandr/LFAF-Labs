@@ -53,6 +53,7 @@ By following these steps, we can transform any context-free grammar into an equi
 
 The `eliminateEpsilonProductions` method is responsible for removing ε-productions (rules of the form A -> ε) from the grammar. It identifies all non-terminal symbols that generate ε directly or indirectly and substitutes them in all other production rules, effectively removing the need for ε-productions.
 ```java
+    private static void eliminateEpsilonProductions(Grammar grammar) {
         // Step 1: Eliminate epsilon productions
         Set<String> nullableSymbols = grammar.P.stream()
                 .filter(rule -> rule.rhs.isEmpty())
@@ -161,6 +162,7 @@ The `eliminateInaccessibleSymbols` method removes non-terminal symbols that are 
 The `eliminateNonProductiveSymbols` method removes non-terminal symbols that cannot derive any terminal strings. It first identifies all non-productive symbols and then removes any production rules containing them. This step ensures that every non-terminal symbol in the grammar can derive at least one terminal string.
 
 ```java
+    private static void eliminateNonProductiveSymbols(Grammar grammar) {
         // Step 4: Eliminate non-productive symbols
         Set<String> productiveSymbols = grammar.P.stream()
                 .filter(rule -> rule.rhs.stream().allMatch(symbol -> grammar.Vt.contains(symbol)))
@@ -186,6 +188,7 @@ The `eliminateNonProductiveSymbols` method removes non-terminal symbols that can
 The `convertToChomskyNormalForm` method converts the remaining production rules to the CNF format. It does so by breaking down rules with more than two symbols on the right-hand side into multiple rules that conform to CNF. Additionally, it introduces new non-terminal symbols for terminal symbols within rules containing more than one symbol on the right-hand side.
 
 ```java
+    private static void convertToChomskyNormalForm(Grammar grammar) {
     // Step 5: Obtain the Chomsky Normal Form
         List<Rule> newRules = new ArrayList<>();
         int newVarCounter = 1;
