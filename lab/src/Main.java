@@ -1,5 +1,6 @@
-import java.util.*;
 
+import java.util.*;
+/*
 public class Main {
     public static void main(String[] args) {
         List<String> vn = Arrays.asList("S", "F", "L");
@@ -62,10 +63,30 @@ public class Main {
 
         newAutomaton.display();
 
-
-
-
-
-
     }
+}
+*/
+public class Main {
+        public static void main(String[] args) {
+                Set<String> Vn = new HashSet<>(Arrays.asList("S", "A", "B", "C", "D"));
+                Set<String> Vt = new HashSet<>(Arrays.asList("a", "b", "d"));
+                List<Rule> P = new ArrayList<>(Arrays.asList(
+                        new Rule("S", Arrays.asList("d", "B")),
+                        new Rule("S", List.of("A")),
+                        new Rule("A", List.of("d")),
+                        new Rule("A", Arrays.asList("d", "S")),
+                        new Rule("A", Arrays.asList("a", "B", "d", "B")),
+                        new Rule("B", List.of("a")),
+                        new Rule("B", Arrays.asList("a", "S")),
+                        new Rule("B", Arrays.asList("A", "C")),
+                        new Rule("D", Arrays.asList("A", "B")),
+                        new Rule("C", Arrays.asList("b", "C")),
+                        new Rule("C", List.of(""))
+                ));
+                String S = "S";
+                Grammar grammar = new Grammar(Vn, Vt, P, S);
+                Grammar cnfGrammar = GrammarNormalizer.normalizeToCNF(grammar);
+                System.out.println(cnfGrammar);
+        }
+
 }

@@ -1,11 +1,11 @@
 import java.util.*;
 
 public class RegularGrammar {
-    private List<String> Vn;
-    private List<String> Vt;
-    private Map<String, List<String>> P;
-    private List<String> alphabet;
-    private List<List<String>> wordList;
+    private final List<String> Vn;
+    private final List<String> Vt;
+    private final Map<String, List<String>> P;
+    private final List<String> alphabet;
+    private final List<List<String>> wordList;
     private String word;
 
     public RegularGrammar(List<String> Vn, List<String> Vt, Map<String, List<String>> P, List<String> alphabet) {
@@ -140,5 +140,6 @@ public class RegularGrammar {
     public Map<String, List<String>> getP() {
         return P;
     }
+
 
 }

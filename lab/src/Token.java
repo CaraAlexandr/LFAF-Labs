@@ -3,8 +3,8 @@ public class Token {
         NUMBER, PLUS, MINUS, MULTIPLY, DIVIDE, LPAREN, RPAREN, EOF
     }
 
-    private Type type;
-    private String value;
+    private final Type type;
+    private final String value;
 
     public Token(Type type, String value) {
         this.type = type;

@@ -5,10 +5,10 @@ import java.util.List;
 
 
 public class FiniteAutomaton {
-    private String q0;
-    private Set<String> F;
-    private List<String> sigma;
-    private List<List<String>> delta;
+    private final String q0;
+    private final Set<String> F;
+    private final List<String> sigma;
+    private final List<List<String>> delta;
     private static List<String> Q;
 
     public FiniteAutomaton(String q0, Set<String> F, List<String> sigma, List<List<String>> delta, List<String> Q) {
@@ -16,7 +16,7 @@ public class FiniteAutomaton {
         this.F = F;
         this.sigma = sigma;
         this.delta = delta;
-        this.Q = Q;
+        FiniteAutomaton.Q = Q;
     }
 
     public boolean checkWord(String word) {
