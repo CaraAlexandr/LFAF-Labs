@@ -3,6 +3,25 @@
 **Course:** Formal Languages & Finite Automata  
 **Author:** Cara Alexandr
 
+## Grammar
+### Variant 5
+
+G= (Vn, VT, P, S) Vn={S, A, B, C, D} Vt={a, b, d}
+
+P={
+1. S—>dB
+2. S—>A
+3. A—>d
+4. A—>dS
+5. A—>aBdB
+6. B—>a
+7. B—>aS
+8. B—>AC
+9. D—>AB
+10. C—>bC
+11. C—>ε 
+
+}
 ## Theory
 
 Chomsky Normal Form (CNF) is a simplified form of context-free grammars that is useful in both the study and the development of algorithms for parsing and other language-processing tasks. A context-free grammar is said to be in Chomsky Normal Form if all its production rules are in one of the following two forms:
